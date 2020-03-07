@@ -52,7 +52,7 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - foreign key
 
-* [ ] What do we need in order to have a _many to many_ relationship between two tables.
+* [x] What do we need in order to have a _many to many_ relationship between two tables.
 
 - a intermediary table.
 
