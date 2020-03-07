@@ -44,7 +44,9 @@ Demonstrate your understanding of this week's concepts by answering the followin
   data can be accessed.
   while, SQL stands for structured query language and is language it is written in.
 
-* [ ] Why do tables need a `primary key`?
+* [x] Why do tables need a `primary key`?
+
+- so they have a unique identifying column.
 
 * [ ] What is the name given to a table column that references the primary key on another table.
 
