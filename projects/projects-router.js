@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const projectModel = require('./projects-model');
+const taskRouter = require('../tasks/tasks-router');
+
+router.use('/:id/tasks', taskRouter);
 
 router.post('/', async (req, res, next) => {
   const { name } = req.body;
