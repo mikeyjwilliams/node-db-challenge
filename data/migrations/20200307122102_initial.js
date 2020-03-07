@@ -26,6 +26,10 @@ exports.up = async function(knex) {
       .boolean('completed')
       .notNullable()
       .defaultTo(0);
+    tbl
+      .integer('project_id')
+      .references('id')
+      .inTable('projects');
   });
 
   await knex.schema.createTable('projects_resources', tbl => {
