@@ -27,9 +27,21 @@ exports.up = async function(knex) {
       .notNullable()
       .defaultTo(0);
   });
+
+  await knex.schema.createTable('projects_resources', tbl => {
+    tbl
+      .integer('project_id')
+      .references('id')
+      .inTable('projects');
+    tbl
+      .integer('resource_id')
+      .references('id')
+      .inTable('resources');
+  });
 };
 
 exports.down = async function(knex) {
+  await knex.schema.dropTableIfExists('projects_resources');
   await knex.schema.dropTableIfExists('tasks');
   await knex.schema.dropTableIfExists('resources');
   await knex.schema.dropTableIfExists('projects');
