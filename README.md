@@ -48,7 +48,9 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - so they have a unique identifying column.
 
-* [ ] What is the name given to a table column that references the primary key on another table.
+* [x] What is the name given to a table column that references the primary key on another table.
+
+- foreign key
 
 * [ ] What do we need in order to have a _many to many_ relationship between two tables.
 
