@@ -26,4 +26,19 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+router.get('/', async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const tasks = await taskModel.getTasks(id);
+    if (tasks.length > 0) {
+      res.status(200).json(tasks);
+    } else {
+      res.status(400).json({ message: 'project ID not found' });
+    }
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+});
+
 module.exports = router;
