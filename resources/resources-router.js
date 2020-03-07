@@ -19,4 +19,17 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+router.get('/', async (req, res, next) => {
+  try {
+    const resources = await resourceModel.getResources();
+    if (resources.length > 0) {
+      res.status(200).json(resources);
+    } else {
+      res.status(400).json({ message: 'no resources to show' });
+    }
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;
