@@ -1,9 +1,14 @@
 const db = require('../data/config');
 
 module.exports = {
+  getProjects,
   addProject,
   getById,
 };
+
+function getProjects() {
+  return db('projects').select();
+}
 
 function getById(id) {
   return db('projects')

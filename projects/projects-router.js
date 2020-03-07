@@ -20,4 +20,17 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+router.get('/', async (req, res, next) => {
+  try {
+    const projects = await projectModel.getProjects();
+    if (projects.length > 0) {
+      res.status(200).json(projects);
+    } else {
+      res.status(400).json({ message: 'no projects to display' });
+    }
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;
