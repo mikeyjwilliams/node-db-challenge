@@ -17,9 +17,20 @@ exports.up = async function(knex) {
       .unique();
     tbl.text('description');
   });
+
+  await knex.schema.createTable('tasks', tbl => {
+    tbl.increments('id');
+    tbl.text('description').notNullable();
+    tbl.text('notes');
+    tbl
+      .boolean('completed')
+      .notNullable()
+      .defaultTo(0);
+  });
 };
 
 exports.down = async function(knex) {
+  await knex.schema.dropTableIfExists('tasks');
   await knex.schema.dropTableIfExists('resources');
   await knex.schema.dropTableIfExists('projects');
 };
