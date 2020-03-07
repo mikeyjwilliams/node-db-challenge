@@ -13,7 +13,8 @@ function getResources() {
 function getById(id) {
   return db('resources')
     .where({ id: id })
-    .select();
+    .select()
+    .first();
 }
 
 async function addResource(resource) {

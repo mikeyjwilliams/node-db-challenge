@@ -8,7 +8,8 @@ module.exports = {
 function getById(id) {
   return db('projects')
     .where({ id: id })
-    .select();
+    .select()
+    .first();
 }
 
 async function addProject(project) {
