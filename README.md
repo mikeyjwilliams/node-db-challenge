@@ -54,6 +54,8 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 * [ ] What do we need in order to have a _many to many_ relationship between two tables.
 
+- a intermediary table.
+
 ## Minimum Viable Product
 
 Take the steps necessary to complete the project from scratch. Start by initializing your project with a `package.json` and go from there.
